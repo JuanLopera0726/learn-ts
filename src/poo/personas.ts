@@ -1,36 +1,36 @@
-import { IPersona } from "./interface_persona";
+import { IPersona } from "./IPersona";
 
-class Hombre implements IPersona {
-    nombre: string;
-    apellido: string;
-    edad!: number;
+export class Hombre implements IPersona {
+    public nombre: string;
+    public apellido: string;
+    public edad!: number;
 
     constructor(nombre?: string, apellido?: string) {
         this.nombre = nombre ?? '';
         this.apellido = apellido ?? '';
     }
 
-    nombre_completo(): string {
+    public nombre_completo(): string {
         return `Tu nombre es ${this.nombre} y tu apellido es ${this.apellido}`;
         
     }
 
-    public hablar_futbol(equipo: string, minutos: number) {
+    public hablar_futbol(equipo: string, minutos: number): void {
         console.log(`Hablemos sobre el: ${equipo} ${minutos} minutos, pues está jugando como los dioses`);
                  
     }
 }
 
-class Mujer implements IPersona {
-    nombre!: string;
-    apellido!: string;
-    edad!: number;
+export class Mujer implements IPersona {
+    public nombre!: string;
+    public apellido!: string;
+    public edad!: number;
 
-    nombre_completo(): string {
+    public nombre_completo(): string {
         return `Tu nombre es ${this.nombre} y tu apellido es ${this.apellido}`;
     }
 
-    public ir_cine(sala: string, pelicula: string){
+    public ir_cine(sala: string, pelicula: string): void {
         console.log(`Viendo ${pelicula} en ${sala}`);
         
     }
