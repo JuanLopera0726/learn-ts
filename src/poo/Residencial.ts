@@ -2,15 +2,14 @@ import { Construccion } from "./Construccion";
 import { IPersona } from "./IPersona";
 import { Hombre, Mujer } from "./personas";
 
-class Residencial extends Construccion {
+export class Residencial extends Construccion {
     private habitantes: Array<IPersona>
 
-    constructor(pisos: number, habitantes: Array<IPersona>) {
+    constructor(pisos: number) {
         super(pisos);
-        this.habitantes = habitantes;
-        this.impuestos();
+        this.habitantes = [];
     }
-    public impuestos(): number {
+    public override impuestos(): number {
         return this.pisos * 1500000;
     }
     public numero_habitantes(): number {
