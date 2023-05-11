@@ -1,5 +1,6 @@
 export abstract class Construccion {
-    static cantidad_edificios: number = 0;
+    // Le pertenece a la clase, no al objeto
+    public static cantidad_edificios: number = 0;
     private _pisos: number;
 
     constructor(pisos: number) {
@@ -11,15 +12,16 @@ export abstract class Construccion {
         return this._pisos * 3000000;
     }
 
-    get pisos(): number {
+    // Con get y set le dimos acceso de pisos a los demás archivos
+    public get pisos(): number {
         return this._pisos;
     }
 
-    set pisos(pisos: number) {
+    public set pisos(pisos: number) {
         this._pisos = pisos;
     }
     
-    static edificios_contador(): number {
+    public static edificios_contador(): number {
         return Construccion.cantidad_edificios;
     }
 
